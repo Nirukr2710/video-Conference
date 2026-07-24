@@ -1,11 +1,14 @@
 import express from "express";
 import {createServer} from "node:http";
 import {Server} from "socket.io";
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
 import { connectToSocket } from "./controllers/socketmanager.js";
 import cors from "cors";
 import userRoutes from "./routes/usersroute.js";
 import { connect } from "node:http2";
+
 const app = express();
 
 const server= createServer(app);
@@ -24,7 +27,7 @@ app.use("/api/v1/users",userRoutes);
 // });
   const start = async()=>{
     app.set("mongo_user")
-    const connectionDb = await mongoose.connect("mongodb+srv://thetechlearner01_db_user:VzZVPGDBpXiBosFj@cluster0.rmwjvb1.mongodb.net/")
+    const connectionDb = await mongoose.connect(process.env.MONGO_URI);
     console.log(`MONGO Connected DB Host : ${connectionDb.connection.host}`)
     server.listen(app.get("port"),()=>{
         console.log("listening on port 2020")
