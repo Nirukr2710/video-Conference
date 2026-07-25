@@ -120,10 +120,6 @@ Add screenshots of:
 
 Contributions are welcome. Feel free to fork the repository and submit a pull request.
 
-## 📄 License
-
-This project is developed for learning and educational purposes.
-
----
-
+# Project link
+https://videoconferencefrontend-6ovr.onrender.com
 ⭐ If you found this project useful, don't forget to give it a star on GitHub!
