@@ -63,7 +63,7 @@ export default function VideoMeetComponent() {
     useEffect(() => {
         getPermissions();
 
-    })
+    },[]);
 
     let getDislayMedia = () => {
         if (screen) {
@@ -268,6 +268,7 @@ export default function VideoMeetComponent() {
     transports: ["websocket", "polling"]
 });
        // socketRef.current = io.connect(server_url, { secure: false })
+
 
         socketRef.current.on('signal', gotMessageFromServer)
 
